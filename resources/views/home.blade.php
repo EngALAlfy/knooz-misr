@@ -518,13 +518,13 @@
 
         var goodBlocksData = [{
                 label: 'جيدة',
-                data: {{ ($good_blocks_count * 100) / ($notgood_blocks_count + $good_blocks_count) }},
+                data: {{ ($notgood_blocks_count + $good_blocks_count) == 0 ? 0 : ($good_blocks_count * 100) / ($notgood_blocks_count + $good_blocks_count) }},
                 color: 'green'
             },
 
             {
                 label: 'غير جيدة',
-                data: {{ ($notgood_blocks_count * 100) / ($notgood_blocks_count + $good_blocks_count) }},
+                data: {{ ($notgood_blocks_count + $good_blocks_count) == 0 ? 0 : ($notgood_blocks_count * 100) / ($notgood_blocks_count + $good_blocks_count) }},
                 color: 'orange'
             }
         ]
@@ -550,18 +550,18 @@
 
         var goodStripsData = [{
                 label: 'جيدة',
-                data: {{ ($good_strips_count * 100) / ($notgood_strips_count + $good_strips_count + $broken_strips_count) }},
+                data: {{ ($notgood_strips_count + $good_strips_count + $broken_strips_count) == 0 ? 0 :($good_strips_count * 100) / ($notgood_strips_count + $good_strips_count + $broken_strips_count) }},
                 color: 'green'
             },
             {
                 label: 'هدر',
-                data: {{ ($broken_strips_count * 100) / ($notgood_strips_count + $good_strips_count + $broken_strips_count) }},
+                data: {{ ($notgood_strips_count + $good_strips_count + $broken_strips_count) == 0 ? 0 :($broken_strips_count * 100) / ($notgood_strips_count + $good_strips_count + $broken_strips_count) }},
                 color: 'red'
             },
 
             {
                 label: 'بها دمار',
-                data: {{ ($notgood_strips_count * 100) / ($notgood_strips_count + $good_strips_count + $broken_strips_count) }},
+                data: {{ ($notgood_strips_count + $good_strips_count + $broken_strips_count) == 0 ? 0 :($notgood_strips_count * 100) / ($notgood_strips_count + $good_strips_count + $broken_strips_count) }},
                 color: 'orange'
             }
         ]
@@ -588,18 +588,18 @@
 
         var goodPiecesData = [{
                 label: 'جيدة',
-                data: {{ ($good_pieces_count * 100) / ($notgood_pieces_count + $good_pieces_count + $broken_pieces_count) }},
+                data: {{ ($notgood_pieces_count + $good_pieces_count + $broken_pieces_count) ==0?0:($good_pieces_count * 100) / ($notgood_pieces_count + $good_pieces_count + $broken_pieces_count) }},
                 color: 'green'
             },
             {
                 label: 'هدر',
-                data: {{ ($broken_pieces_count * 100) / ($notgood_pieces_count + $good_pieces_count + $broken_pieces_count) }},
+                data: {{ ($notgood_pieces_count + $good_pieces_count + $broken_pieces_count) ==0?0:($broken_pieces_count * 100) / ($notgood_pieces_count + $good_pieces_count + $broken_pieces_count) }},
                 color: 'red'
             },
 
             {
                 label: 'بها دمار',
-                data: {{ ($notgood_pieces_count * 100) / ($notgood_pieces_count + $good_pieces_count + $broken_pieces_count) }},
+                data: {{ ($notgood_pieces_count + $good_pieces_count + $broken_pieces_count) ==0?0:($notgood_pieces_count * 100) / ($notgood_pieces_count + $good_pieces_count + $broken_pieces_count) }},
                 color: 'orange'
             }
         ]
@@ -628,18 +628,18 @@
 
         var goodPiecesStoreData = [{
                 label: 'جيدة',
-                data: {{ ($good_pieces_store_count * 100) / ($notgood_pieces_store_count + $good_pieces_store_count + $broken_pieces_store_count) }},
+                data: {{ ($notgood_pieces_count + $good_pieces_count + $broken_pieces_count) ==0?0:($good_pieces_store_count * 100) / ($notgood_pieces_store_count + $good_pieces_store_count + $broken_pieces_store_count) }},
                 color: 'green'
             },
             {
                 label: 'هدر',
-                data: {{ ($broken_pieces_store_count * 100) / ($notgood_pieces_store_count + $good_pieces_store_count + $broken_pieces_store_count) }},
+                data: {{ ($notgood_pieces_count + $good_pieces_count + $broken_pieces_count) ==0?0:($broken_pieces_store_count * 100) / ($notgood_pieces_store_count + $good_pieces_store_count + $broken_pieces_store_count) }},
                 color: 'red'
             },
 
             {
                 label: 'بها دمار',
-                data: {{ ($notgood_pieces_store_count * 100) / ($notgood_pieces_store_count + $good_pieces_store_count + $broken_pieces_store_count) }},
+                data: {{ ($notgood_pieces_count + $good_pieces_count + $broken_pieces_count) ==0?0:($notgood_pieces_store_count * 100) / ($notgood_pieces_store_count + $good_pieces_store_count + $broken_pieces_store_count) }},
                 color: 'orange'
             }
         ]
